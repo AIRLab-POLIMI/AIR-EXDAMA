@@ -1,0 +1,1 @@
+/usr/games/stepmania-5.1/stepmania
