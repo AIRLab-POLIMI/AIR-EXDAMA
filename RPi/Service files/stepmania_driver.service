@@ -2,16 +2,16 @@
 Description=Launch the python script to receive the data from AIR ExDaMa ses
 
 
-After=syslog.target
-After=systemd-user-sessions.service
+After=network.target
 
 
 [Service]
-Type=simple
-ExecStart=/usr/local/bin/Stepmania_driver.sh
-Restart=on-failure
-RestartSec=10
-KillMode=mixed
+ExecStart=/usr/bin/python3 -u Driver_final.py
+WorkingDirectory=/usr/games/stepmania_driver/
+inherit=Standard_output
+StandardError=inherit
+Restart=always
+User=root
 
 [Install]
 WantedBy=multi-user.target
